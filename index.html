@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobRich</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        img{
+            height: 200px;
+            width : 200px;
+            border: 2px black solid;
+        }
+    </style>
+</head>
+<body>
+
+    <label>Image Name</label><input type="text" id="namebox" />
+    <label id="extlab"></label><br>
+    <img id="myimg" alt=""><label for="" id="upprogress"></label>
+
+    <button id="selbtn">画像を選ぶ</button>
+    <button id="upbtn">画像をアップロード</button>
+    <button id="downbtn">Retrieve</button>
+
+<div id="output" style="overflow: auto;height: 300px;"></div>
+<div>
+    <!-- 「名前：」を消去するためにdisplay:noneを利用（inputタグを削除するとDBでエラーが生じる -->
+    <p>名前</p>
+    <input type="text" id="uname">
+</div>
+    <p>メッセージ</p>
+    <textarea id="text" cols="30" rows="10" ></textarea>
+    <button id="send">送信</button>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="module" src="js/chat.js"></script>
+</body>
+</html>
