@@ -1,21 +1,12 @@
 // 必要なfirebaseライブラリを読み込む
 // Import the functions you need from the SDKs you need
-import { initializeApp } 
 //バージョンを要チェック！
-from "https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js";
 //↓に重要なコードを貼り付ける（RealtimeDatabaseを使えるよう追加でインポートしている）
-import { getDatabase, ref, push, set, onChildAdded, remove,onChildRemoved,serverTimestamp} 
 //バージョンを要チェック！
-from "https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js";
+import { getDatabase, ref, push, set, onChildAdded, remove,onChildRemoved,serverTimestamp} from "https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js";
 //auth認証のライブラリを追加
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } 
-from "https://www.gstatic.com/firebasejs/9.1.0/firebase-auth.js";
-
-//GoogleAuth(認証用)ここから
-const provider = new GoogleAuthProvider();
-provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-const auth = getAuth();
-//GoogleAuth(認証用)ここまで
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-auth.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -24,6 +15,14 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+//GoogleAuth(認証用)ここから
+const provider = new GoogleAuthProvider();
+provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+const auth = getAuth();
+//GoogleAuth(認証用)ここまで
+
+
 // <!-- firebaseのCDNから貼り付け（ここまで） -->
 
 const clouddb = getFirestore();
